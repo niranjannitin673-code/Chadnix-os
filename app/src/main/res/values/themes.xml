@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Chadnix" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#7FDBFF</item>
+        <item name="colorPrimaryDark">#12151A</item>
+        <item name="android:windowBackground">#12151A</item>
+    </style>
+
+    <style name="Theme.Chadnix.NoActionBar" parent="Theme.Chadnix">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
