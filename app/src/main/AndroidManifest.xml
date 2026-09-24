@@ -19,9 +19,9 @@
         android:theme="@style/Theme.Chadnix"
         android:supportsRtl="true">
 
-        <!-- Entry point: requests overlay permission and starts the floating taskbar -->
+        <!-- Setup / mode-chooser screen: user picks Launcher mode or Overlay mode -->
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.ModeChooserActivity"
             android:exported="true"
             android:theme="@style/Theme.Chadnix">
             <intent-filter>
@@ -30,7 +30,22 @@
             </intent-filter>
         </activity>
 
-        <!-- Floating window manager, runs as an overlay without replacing the home screen -->
+        <!-- LAUNCHER MODE: registers as a Home app the user can select -->
+        <activity
+            android:name=".launcher.LauncherActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.Chadnix.NoActionBar"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- OVERLAY MODE: floating window manager, runs without replacing the home screen -->
         <service
             android:name=".overlay.ChadnixOverlayService"
             android:exported="false"

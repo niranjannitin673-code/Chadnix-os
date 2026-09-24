@@ -16,7 +16,7 @@ import android.view.WindowManager
 import androidx.core.app.NotificationCompat
 import com.chadnix.os.R
 import com.chadnix.os.core.AppRepository
-import com.chadnix.os.ui.MainActivity
+import com.chadnix.os.ui.ModeChooserActivity
 
 /**
  * Overlay mode: Chadnix runs as a floating taskbar drawn over every other app,
@@ -58,7 +58,7 @@ class ChadnixOverlayService : Service() {
             nm.createNotificationChannel(channel)
         }
 
-        val stopIntent = Intent(this, MainActivity::class.java)
+        val stopIntent = Intent(this, ModeChooserActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this, 0, stopIntent,
             PendingIntent.FLAG_IMMUTABLE
