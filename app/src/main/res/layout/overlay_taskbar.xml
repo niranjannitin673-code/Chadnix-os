@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#DD20242B"
+    android:padding="10dp"
+    android:gravity="center_vertical">
+
+    <View
+        android:id="@+id/overlayDragHandle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="#7FDBFF" />
+
+    <Button
+        android:id="@+id/overlayDrawerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Apps" />
+
+    <Button
+        android:id="@+id/overlayCloseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="X" />
+
+</LinearLayout>

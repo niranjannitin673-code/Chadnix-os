@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Non-root permissions only -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".core.ChadnixApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Chadnix"
+        android:theme="@style/Theme.Chadnix"
+        android:supportsRtl="true">
+
+        <!-- Setup / mode-chooser screen: user picks Launcher mode or Overlay mode -->
+        <activity
+            android:name=".ui.ModeChooserActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Chadnix">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LAUNCHER MODE: registers as a Home app the user can select -->
+        <activity
+            android:name=".launcher.LauncherActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.Chadnix.NoActionBar"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- OVERLAY MODE: floating window manager, runs without replacing the home screen -->
+        <service
+            android:name=".overlay.ChadnixOverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="chadnix_window_manager_overlay" />
+        </service>
+
+    </application>
+</manifest>

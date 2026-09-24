@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#1B1F23"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chadnix"
+        android:textColor="#7FDBFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ek IceWM-inspired window manager, Android ke liye"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btnLauncherMode"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Launcher Mode\n(Home screen replace)"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnOverlayMode"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Overlay Mode\n(Floating taskbar)" />
+
+</LinearLayout>
